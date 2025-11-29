@@ -3,6 +3,7 @@ package com.amazonPages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.FileInputStream;
@@ -15,6 +16,10 @@ public class Base_Page
     public static WebDriver driver;
     Properties properties;
     public static WebDriverWait wait;
+
+    @FindBy(xpath="//button[@type='submit']")
+    WebElement continueShopping;
+
     public Base_Page()
     {
         String filePath="C:\\Users\\ELCOT\\IdeaProjects\\AmazonApplication\\src\\main\\java\\com\\amazonPages\\Config.properties";

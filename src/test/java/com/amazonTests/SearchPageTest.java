@@ -2,7 +2,7 @@ package com.amazonTests;
 
 import com.amazonPages.Base_Page;
 import com.amazonPages.Search_Page;
-import org.junit.Assert;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -26,7 +26,7 @@ public class SearchPageTest
     @AfterMethod
     public void verifyProduct()
     {
-        Assert.assertEquals("Output Mismatch",searchPage.expectedProductName(),searchPage.actualProductName());
-        Assert.assertEquals("Price mismatch",searchPage.expectedPrice(),searchPage.actualPrice());
+        Assert.assertEquals(searchPage.actualProductName(),searchPage.expectedProductName(),"Output Mismatch");
+        Assert.assertEquals(searchPage.actualPrice(),searchPage.expectedPrice(),"Price mismatch");
     }
 }

@@ -13,8 +13,6 @@ public class Search_Page extends Base_Page
         super();
         PageFactory.initElements(driver,this);
     }
-    @FindBy(xpath="//button[@type='submit']")
-    WebElement continueShopping;
     @FindBy(xpath="//input[@role='searchbox']")
     WebElement productName;
     @FindBy(xpath="//input[@type=\"submit\"]")
