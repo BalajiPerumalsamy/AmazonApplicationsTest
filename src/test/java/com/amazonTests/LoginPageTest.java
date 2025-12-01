@@ -29,7 +29,7 @@ public class LoginPageTest
     @AfterTest
     public void verifyLogin()
     {
-        Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),"Actual and Expected Output is mismatch");
+        Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),"Login Actual and Expected Output is mismatch");
         System.out.println("Account successful Login ");
     }
 }
