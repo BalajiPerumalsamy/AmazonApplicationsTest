@@ -16,6 +16,7 @@ public class SearchPageTest
     {
         basePage=new Base_Page();
         basePage.navigateToApplication();
+        basePage.captureScreenshot("HomePage");
     }
     @Test
     public void searchProduct()
@@ -26,7 +27,16 @@ public class SearchPageTest
     @AfterMethod
     public void verifyProduct()
     {
-        Assert.assertEquals(searchPage.actualProductName(),searchPage.expectedProductName(),"Output Mismatch");
-        Assert.assertEquals(searchPage.actualPrice(),searchPage.expectedPrice(),"Price mismatch");
+        try
+        {
+            Assert.assertEquals(searchPage.actualProductName(),searchPage.expectedProductName(),"Output Mismatch");
+            Assert.assertEquals(searchPage.actualPrice(),searchPage.expectedPrice(),"Price mismatch");
+            Thread.sleep(15000);
+            basePage.quitApplication();
+        }
+        catch(InterruptedException e)
+        {
+            System.out.println(e);
+        }
     }
 }

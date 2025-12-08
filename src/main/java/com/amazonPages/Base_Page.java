@@ -10,6 +10,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.io.FileHandler;
+import java.io.File;
 
 public class Base_Page
 {
@@ -39,8 +43,8 @@ public class Base_Page
         driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        wait=new WebDriverWait(driver,Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        wait=new WebDriverWait(driver,Duration.ofSeconds(40));
         driver.get(properties.getProperty("url"));
     }
     public void writeText(String text,WebElement element)
@@ -54,5 +58,20 @@ public class Base_Page
     public void quitApplication()
     {
         driver.quit();
+    }
+
+    public void captureScreenshot(String fileName)
+    {
+        try
+        {
+            TakesScreenshot screenshot=(TakesScreenshot) driver;
+            File src=screenshot.getScreenshotAs(OutputType.FILE);
+            File file=new File("./Screenshots/" + fileName + ".png");
+            FileHandler.copy(src,file);
+        }
+        catch (Exception e)
+        {
+            System.out.println("Exception while taking screenshot: " + e.getMessage());
+        }
     }
 }
