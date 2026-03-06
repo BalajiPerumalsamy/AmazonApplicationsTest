@@ -24,12 +24,12 @@ public class LoginPageTest
     {
         loginPage=new Login_Page();
         loginPage.ApplicationLogin();
+        Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),"Login Actual and Expected Output is mismatch");
     }
 
     @AfterTest
-    public void verifyLogin()
+    public void tearDown()
     {
-        Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),"Login Actual and Expected Output is mismatch");
-        System.out.println("Account successful Login ");
+        basePage.quitApplication();
     }
 }
