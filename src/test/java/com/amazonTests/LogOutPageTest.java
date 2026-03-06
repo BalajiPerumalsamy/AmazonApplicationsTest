@@ -27,11 +27,12 @@ public class LogOutPageTest
     {
         logOutPage=new LogOut_Page();
         logOutPage.accountSignOut();
+        Assert.assertEquals(logOutPage.actualOutput(),logOutPage.expectedOutput(),"Logout Actual and Expected Output is mismatch");
     }
+
     @AfterTest
     public void tearDown()
     {
-        Assert.assertEquals(logOutPage.actualOutput(),logOutPage.expectedOutput(),"Logout Actual and Expected Output is mismatch");
-        System.out.println("Account successful LogOut");
+        basePage.quitApplication();
     }
 }
