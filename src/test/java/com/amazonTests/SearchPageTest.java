@@ -23,14 +23,14 @@ public class SearchPageTest
     {
         searchPage=new Search_Page();
         searchPage.product();
+        Assert.assertEquals(searchPage.actualProductName(),searchPage.expectedProductName(),"Output Mismatch");
+        Assert.assertEquals(searchPage.actualPrice(),searchPage.expectedPrice(),"Price mismatch");
     }
     @AfterMethod
-    public void verifyProduct()
+    public void tearDown()
     {
         try
         {
-            Assert.assertEquals(searchPage.actualProductName(),searchPage.expectedProductName(),"Output Mismatch");
-            Assert.assertEquals(searchPage.actualPrice(),searchPage.expectedPrice(),"Price mismatch");
             Thread.sleep(15000);
             basePage.quitApplication();
         }
