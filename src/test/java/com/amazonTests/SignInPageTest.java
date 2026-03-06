@@ -2,6 +2,7 @@ package com.amazonTests;
 
 import com.amazonPages.Base_Page;
 import com.amazonPages.SignIn_Page;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -20,5 +21,11 @@ public class SignInPageTest
     {
         signInPage=new SignIn_Page();
         signInPage.applicationSignIn();
+    }
+
+    @AfterTest
+    public void tearDown()
+    {
+        basePage.quitApplication();
     }
 }
