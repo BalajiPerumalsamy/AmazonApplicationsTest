@@ -55,7 +55,7 @@ public class SignIn_Page extends Base_Page
     {
         try
         {
-            clickButton(continueShopping);
+            //clickButton(continueShopping);
             clickButton(clickSignInButton);
             writeText(properties.getProperty("newEmailId"),enterEmailId);
             clickButton(clickContinueButton);
