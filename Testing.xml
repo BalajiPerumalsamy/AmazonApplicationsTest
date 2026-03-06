@@ -5,10 +5,9 @@
     <test name="TestClassesExecute">
         <classes>
             <class name="com.amazonTests.SignInPageTest"/>
-            <!--<class name="com.amazonTests.LoginPageTest"/>
+            <class name="com.amazonTests.LoginPageTest"/>
             <class name="com.amazonTests.SearchPageTest"/>
             <class name="com.amazonTests.LogOutPageTest"/>
-            -->
         </classes>
     </test>
 </suite>
