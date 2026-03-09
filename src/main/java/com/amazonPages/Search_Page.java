@@ -82,20 +82,25 @@ public class Search_Page extends Base_Page
             System.out.println(e);
         }
     }
+
     public String actualProductName()
     {
         return name;
     }
+
     public String expectedProductName()
     {
         return "iQOO Z10x 5G (Ultramarine, 6GB RAM, 128GB Storage) | 6500 mAh Large Capacity Battery | Dimensity 7300 Processor | Military-Grade Durability";
     }
+
     public String actualPrice()
     {
         return amount;
     }
+
     public String expectedPrice()
     {
         return "14,999";
     }
+
 }
